@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5f1566969b5174d9e28a1e5d69b38b, type: 3}
+  m_Name: CategoryButtonPresetTemplate
+  m_EditorClassIdentifier: Assembly-CSharp::CategoryButtonPreset
+  thumbnail: {fileID: 21300000, guid: 133913b09444d2f4fb0444717b8f1b47, type: 3}
+  viewerButtonsPresets:
+  - {fileID: 11400000, guid: 1f3609e4c11c3c2429e63cd13135b350, type: 2}
+  - {fileID: 11400000, guid: be8108ca788b53f4ea7fc730a1177020, type: 2}
+  - {fileID: 11400000, guid: be8108ca788b53f4ea7fc730a1177020, type: 2}
+  - {fileID: 11400000, guid: be8108ca788b53f4ea7fc730a1177020, type: 2}
+  - {fileID: 11400000, guid: be8108ca788b53f4ea7fc730a1177020, type: 2}
+  - {fileID: 11400000, guid: be8108ca788b53f4ea7fc730a1177020, type: 2}
+  categoryButtonsPresets:
+  - {fileID: 11400000, guid: 58cfdd8ebd34359488576976b0b138c4, type: 2}
+  - {fileID: 11400000, guid: 5aafb298dabbdb94d9963075557a67af, type: 2}
+  musicClip: {fileID: 8300000, guid: cecc6a422725f4c418edb11371be4b81, type: 3}
+  categoryEnv: {fileID: 5963275728625372662, guid: 86b2968c15bc63f45927f678a2a90519, type: 3}

@@ -10,7 +10,7 @@ public class PlayerManagement : MonoBehaviour
     private VideoPlayer _videoPlayer;
     public VideoPlayer VideoPlayer => _videoPlayer;
 
-    private void Start()
+    private void Awake()
     {
         if (instance != null)
         {
@@ -21,6 +21,7 @@ public class PlayerManagement : MonoBehaviour
         instance = this;
         _videoPlayer = GetComponent<VideoPlayer>();
         _videoPlayer.isLooping = true;
+        ViewerSetter.OnPresetChanged += SetVideo;
     }
 
     public void PlayVideo()
@@ -42,5 +43,11 @@ public class PlayerManagement : MonoBehaviour
     {
         StopVideo();
         _videoPlayer.clip = clip;
+    }
+
+    private void SetVideo(VideoButtonPreset preset)
+    {
+        StopVideo();
+        _videoPlayer.clip = preset.videoClip;
     }
 }
