@@ -10,6 +10,8 @@ public class PlayerManagement : MonoBehaviour
     private VideoPlayer _videoPlayer;
     public VideoPlayer VideoPlayer => _videoPlayer;
 
+    private VideoButtonPreset _videoPreset;
+    
     private void Awake()
     {
         if (instance != null)
@@ -22,6 +24,7 @@ public class PlayerManagement : MonoBehaviour
         _videoPlayer = GetComponent<VideoPlayer>();
         _videoPlayer.isLooping = true;
         ViewerSetter.OnPresetChanged += SetVideo;
+        _videoPlayer.loopPointReached += delegate { OnEndOfVideo(); };
     }
 
     public void PlayVideo()
@@ -43,11 +46,27 @@ public class PlayerManagement : MonoBehaviour
     {
         StopVideo();
         _videoPlayer.clip = clip;
+        _videoPlayer.time = 0;
+        PlayVideo();
     }
 
     private void SetVideo(VideoButtonPreset preset)
     {
-        StopVideo();
-        _videoPlayer.clip = preset.videoClip;
+        _videoPreset = preset;
+
+        _videoPlayer.isLooping = preset.loopClip;
+        
+        SetVideo(preset.videoClip);
+    }
+
+    private void OnEndOfVideo()
+    {
+        if (_videoPlayer.isLooping)
+        {
+            AudioManager.instance.ReplayClip(AudioType.Voice);
+            return;
+        }
+        
+        ViewerSetter.SetVideoPreset(_videoPreset.nextPreset);
     }
 }

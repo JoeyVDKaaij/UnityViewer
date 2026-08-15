@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 58cfdd8ebd34359488576976b0b138c4, type: 2}
   voiceClip: {fileID: 8300000, guid: cecc6a422725f4c418edb11371be4b81, type: 3}
   musicClip: {fileID: 8300000, guid: d610121b0c497e543bb2dc165dad85f9, type: 3}
+  loopClip: 0

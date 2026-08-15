@@ -11,4 +11,6 @@ public class VideoButtonPreset : ButtonPreset
     public CategoryButtonPreset[] categoryPresets;
     public AudioClip voiceClip;
     public AudioClip musicClip;
+
+    public bool loopClip = true;
 }

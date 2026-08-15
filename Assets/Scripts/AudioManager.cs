@@ -81,6 +81,15 @@ public class AudioManager : MonoBehaviour
         
         return chosenSource;
     }
+
+    public void ReplayClip(AudioType audioType)
+    {
+        AudioSource chosenSource = GetSource(audioType);
+        
+        chosenSource.Stop();
+        chosenSource.time = 0f;
+        chosenSource.Play();
+    }
 }
 
 public enum AudioType

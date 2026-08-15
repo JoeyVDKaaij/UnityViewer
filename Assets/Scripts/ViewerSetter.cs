@@ -29,6 +29,7 @@ public class ViewerSetter : MonoBehaviour
         
         AudioManager.instance.UpdateSourceClip(_videoPreset.musicClip, AudioType.Music);
         AudioManager.instance.UpdateSourceClip(_videoPreset.voiceClip, AudioType.Voice);
+        AudioManager.instance.ReplayClip(AudioType.Voice);
         
         OnPresetChanged?.Invoke(pPreset);
     }

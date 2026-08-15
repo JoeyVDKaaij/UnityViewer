@@ -107,6 +107,7 @@ public class CategorySetter : MonoBehaviour
         Destroy(gameObject);
         
         CategorySetter newInstance = Instantiate(preset.categoryEnv);
+        newInstance.SetViewerSetter(viewerSetter);
         newInstance.SetupCategory(preset);
 
         return newInstance;
